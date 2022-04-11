@@ -1,0 +1,19 @@
+#navbar{
+    display: flex;
+    /* flex-wrap:wrap; */
+    justify-content: space-evenly;
+    gap:200px;
+}
+#navbar>div{
+    
+    /* margin:auto; */
+}
+#content{
+    display:flex;
+    flex-direction: column;
+}
+input,select{
+    width:200px;
+    margin:auto;
+    margin-top: 10px;
+}

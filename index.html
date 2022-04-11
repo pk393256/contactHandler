@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="./homecss.css">
+<body>
+    <div id="navbar">
+        <div><a href="./index.html">Home</a></div>
+        <div><a href="./contact.html">Contact List</a></div>
+        <div><a href="./favourites.html">Favourites</a></div>
+    </div>
+    <form id="content">
+        <h1 style="text-align: center;">Enter your contact details</h1>
+        <input type="text" placeholder="Enter Contact name" id="name">
+        <input type="number" placeholder="Enter Mobile Number" id="number">
+        <select id="type">
+            <option>
+                Family
+            </option>
+            <option>
+                Friend
+            </option>
+        </select>
+        <input type="submit" id="submit">
+    </form>
+</body>
+<script>
+    document.querySelector('#content').addEventListener('submit',myFunction);
+    var contactList=JSON.parse(localStorage.getItem('contactList')) || [];
+function myFunction(){
+    event.preventDefault();
+    var newContact={
+        name:document.querySelector('#name').value,
+        number:document.querySelector('#number').value,
+        type:document.querySelector('#type').value
+    }
+    contactList.push(newContact);
+    localStorage.setItem('contactList',JSON.stringify(contactList));
+}
+    
+</script>
+</html>
